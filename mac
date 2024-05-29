@@ -122,7 +122,6 @@ brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
 tap "thoughtbot/formulae"
 tap "homebrew/services"
-tap "heroku/brew"
 
 # Unix
 brew "universal-ctags"
@@ -136,10 +135,6 @@ brew "vim"
 brew "watchman"
 brew "zsh"
 
-# Heroku
-#brew "heroku/brew/heroku"
-#brew "parity"
-
 # GitHub
 brew "gh"
 
@@ -152,12 +147,19 @@ brew "poppler"
 # Programming language prerequisites and package managers
 brew "libyaml" # should come after openssl
 brew "coreutils"
+brew "nodenv"
+brew "rbenv"
+brew "ruby-build"
+brew "node-build"
+brew "python-build"
 brew "yarn"
+brew "pyenv"
+brew "tfenv"
 cask "gpg-suite-no-mail"
 
 # Databases
-brew "postgresql@14", restart_service: :changed
-brew "redis", restart_service: :changed
+# brew "postgresql@14", restart_service: :changed
+# brew "redis", restart_service: :changed
 EOF
 
 fancy_echo "Update heroku binary ..."
